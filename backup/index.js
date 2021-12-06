@@ -19,6 +19,6 @@ async function backup() {
 }
 
 backup();
-cron.schedule('* */10 * * *', () => {
+cron.schedule('0 0 0,12 * * *', () => {
   backup();
 });
