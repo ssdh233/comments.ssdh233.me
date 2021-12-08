@@ -4,7 +4,10 @@ host =
   http://ssdh233.me
   https://ssdh233.me
   http://localhost:4000
+  https://local.ssdh233.me
 max-age = 1m
+notify = stdout, smtp
+reply-notifications = true
 
 [server]
 listen = http://0.0.0.0:8080/ 
@@ -14,3 +17,13 @@ enabled = false
 reply-to-self = false
 require-author = false
 require-email = false
+
+[smtp]
+username=AWS_SES_USER_NAME
+password=AWS_SES_PASSWORD
+security=ssl
+host=AWS_SES_HOST
+port=465
+to=songsongdahu233@gmail.com
+from=notify@mail.ssdh233.me
+timeout=10
